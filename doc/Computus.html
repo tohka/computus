@@ -436,16 +436,6 @@
       <pre class="lines">
 
 
-61
-62
-63
-64
-65
-66
-67
-68
-69
-70
 71
 72
 73
@@ -453,10 +443,20 @@
 75
 76
 77
-78</pre>
+78
+79
+80
+81
+82
+83
+84
+85
+86
+87
+88</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File 'lib/computus.rb', line 61</span>
+      <pre class="code"><span class="info file"># File 'lib/computus.rb', line 71</span>
 
 <span class='kw'>def</span> <span class='kw'>self</span><span class='period'>.</span><span class='id identifier rubyid_butcher'>butcher</span><span class='lparen'>(</span><span class='id identifier rubyid_year'>year</span><span class='rparen'>)</span>
 	<span class='id identifier rubyid_raise'>raise</span> <span class='const'>TypeError</span> <span class='kw'>unless</span> <span class='id identifier rubyid_year'>year</span><span class='period'>.</span><span class='id identifier rubyid_kind_of?'>kind_of?</span><span class='lparen'>(</span><span class='const'>Integer</span><span class='rparen'>)</span>
@@ -497,6 +497,10 @@
 
 <p>This is an alias of <span class='object_link'><a href="#pascha-class_method" title="Computus.pascha (method)">pascha</a></span>, but a default value of <tt>is_julian</tt> is
 false.</p>
+
+<p>When <tt>is_julian</tt> is true, returns Time object with year, month and
+day as Julian calendar. But Time object has Gregorian date, so Time#to_i
+and Time#wday return incorrect values.</p>
 
 
   </div>
@@ -584,18 +588,18 @@ false.</p>
       <pre class="lines">
 
 
-21
-22
-23
-24
-25
 26
 27
 28
-29</pre>
+29
+30
+31
+32
+33
+34</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File 'lib/computus.rb', line 21</span>
+      <pre class="code"><span class="info file"># File 'lib/computus.rb', line 26</span>
 
 <span class='kw'>def</span> <span class='kw'>self</span><span class='period'>.</span><span class='id identifier rubyid_easter'>easter</span><span class='lparen'>(</span><span class='id identifier rubyid_year'>year</span><span class='comma'>,</span> <span class='id identifier rubyid_is_julian'>is_julian</span> <span class='op'>=</span> <span class='kw'>false</span><span class='rparen'>)</span>
 	<span class='id identifier rubyid_raise'>raise</span> <span class='const'>TypeError</span> <span class='kw'>unless</span> <span class='id identifier rubyid_year'>year</span><span class='period'>.</span><span class='id identifier rubyid_kind_of?'>kind_of?</span><span class='lparen'>(</span><span class='const'>Integer</span><span class='rparen'>)</span>
@@ -701,27 +705,27 @@ false.</p>
       <pre class="lines">
 
 
-131
-132
-133
-134
-135
-136
-137
-138
-139
-140
-141
-142
-143
-144
 145
 146
 147
-148</pre>
+148
+149
+150
+151
+152
+153
+154
+155
+156
+157
+158
+159
+160
+161
+162</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File 'lib/computus.rb', line 131</span>
+      <pre class="code"><span class="info file"># File 'lib/computus.rb', line 145</span>
 
 <span class='kw'>def</span> <span class='kw'>self</span><span class='period'>.</span><span class='id identifier rubyid_epact'>epact</span><span class='lparen'>(</span><span class='id identifier rubyid_year'>year</span><span class='comma'>,</span> <span class='id identifier rubyid_is_julian'>is_julian</span> <span class='op'>=</span> <span class='kw'>false</span><span class='rparen'>)</span>
 	<span class='id identifier rubyid_raise'>raise</span> <span class='const'>TypeError</span> <span class='kw'>unless</span> <span class='id identifier rubyid_year'>year</span><span class='period'>.</span><span class='id identifier rubyid_kind_of?'>kind_of?</span><span class='lparen'>(</span><span class='const'>Integer</span><span class='rparen'>)</span>
@@ -836,15 +840,15 @@ false.</p>
       <pre class="lines">
 
 
-179
-180
-181
-182
-183
-184</pre>
+193
+194
+195
+196
+197
+198</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File 'lib/computus.rb', line 179</span>
+      <pre class="code"><span class="info file"># File 'lib/computus.rb', line 193</span>
 
 <span class='kw'>def</span> <span class='kw'>self</span><span class='period'>.</span><span class='id identifier rubyid_fullmoon'>fullmoon</span><span class='lparen'>(</span><span class='id identifier rubyid_year'>year</span><span class='comma'>,</span> <span class='id identifier rubyid_is_julian'>is_julian</span> <span class='op'>=</span> <span class='kw'>false</span><span class='rparen'>)</span>
 	<span class='id identifier rubyid_raise'>raise</span> <span class='const'>TypeError</span> <span class='kw'>unless</span> <span class='id identifier rubyid_year'>year</span><span class='period'>.</span><span class='id identifier rubyid_kind_of?'>kind_of?</span><span class='lparen'>(</span><span class='const'>Integer</span><span class='rparen'>)</span>
@@ -944,15 +948,15 @@ false.</p>
       <pre class="lines">
 
 
-107
-108
-109
-110
-111
-112</pre>
+121
+122
+123
+124
+125
+126</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File 'lib/computus.rb', line 107</span>
+      <pre class="code"><span class="info file"># File 'lib/computus.rb', line 121</span>
 
 <span class='kw'>def</span> <span class='kw'>self</span><span class='period'>.</span><span class='id identifier rubyid_gj_diff'>gj_diff</span><span class='lparen'>(</span><span class='id identifier rubyid_year'>year</span><span class='rparen'>)</span>
 	<span class='id identifier rubyid_raise'>raise</span> <span class='const'>TypeError</span> <span class='kw'>unless</span> <span class='id identifier rubyid_year'>year</span><span class='period'>.</span><span class='id identifier rubyid_kind_of?'>kind_of?</span><span class='lparen'>(</span><span class='const'>Integer</span><span class='rparen'>)</span>
@@ -1042,14 +1046,14 @@ false.</p>
       <pre class="lines">
 
 
-119
-120
-121
-122
-123</pre>
+133
+134
+135
+136
+137</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File 'lib/computus.rb', line 119</span>
+      <pre class="code"><span class="info file"># File 'lib/computus.rb', line 133</span>
 
 <span class='kw'>def</span> <span class='kw'>self</span><span class='period'>.</span><span class='id identifier rubyid_golden_number'>golden_number</span><span class='lparen'>(</span><span class='id identifier rubyid_year'>year</span><span class='rparen'>)</span>
 	<span class='id identifier rubyid_raise'>raise</span> <span class='const'>TypeError</span> <span class='kw'>unless</span> <span class='id identifier rubyid_year'>year</span><span class='period'>.</span><span class='id identifier rubyid_kind_of?'>kind_of?</span><span class='lparen'>(</span><span class='const'>Integer</span><span class='rparen'>)</span>
@@ -1074,6 +1078,10 @@ false.</p>
   <div class="discussion">
     
 <p>Meeus algorithm for calculating the date of the Julian Easter(Pascha).</p>
+
+<p>Returns Time object with year, month and day as Julian calendar. But Time
+object has Gregorian date, so Time#to_i and Time#wday return incorrect
+values.</p>
 
 
   </div>
@@ -1138,20 +1146,20 @@ false.</p>
       <pre class="lines">
 
 
-85
-86
-87
-88
-89
-90
-91
-92
-93
-94
-95</pre>
+99
+100
+101
+102
+103
+104
+105
+106
+107
+108
+109</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File 'lib/computus.rb', line 85</span>
+      <pre class="code"><span class="info file"># File 'lib/computus.rb', line 99</span>
 
 <span class='kw'>def</span> <span class='kw'>self</span><span class='period'>.</span><span class='id identifier rubyid_meeus'>meeus</span><span class='lparen'>(</span><span class='id identifier rubyid_year'>year</span><span class='rparen'>)</span>
 	<span class='id identifier rubyid_raise'>raise</span> <span class='const'>TypeError</span> <span class='kw'>unless</span> <span class='id identifier rubyid_year'>year</span><span class='period'>.</span><span class='id identifier rubyid_kind_of?'>kind_of?</span><span class='lparen'>(</span><span class='const'>Integer</span><span class='rparen'>)</span>
@@ -1259,25 +1267,25 @@ false.</p>
       <pre class="lines">
 
 
-156
-157
-158
-159
-160
-161
-162
-163
-164
-165
-166
-167
-168
-169
 170
-171</pre>
+171
+172
+173
+174
+175
+176
+177
+178
+179
+180
+181
+182
+183
+184
+185</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File 'lib/computus.rb', line 156</span>
+      <pre class="code"><span class="info file"># File 'lib/computus.rb', line 170</span>
 
 <span class='kw'>def</span> <span class='kw'>self</span><span class='period'>.</span><span class='id identifier rubyid_newmoon'>newmoon</span><span class='lparen'>(</span><span class='id identifier rubyid_year'>year</span><span class='comma'>,</span> <span class='id identifier rubyid_is_julian'>is_julian</span> <span class='op'>=</span> <span class='kw'>false</span><span class='rparen'>)</span>
 	<span class='id identifier rubyid_raise'>raise</span> <span class='const'>TypeError</span> <span class='kw'>unless</span> <span class='id identifier rubyid_year'>year</span><span class='period'>.</span><span class='id identifier rubyid_kind_of?'>kind_of?</span><span class='lparen'>(</span><span class='const'>Integer</span><span class='rparen'>)</span>
@@ -1316,6 +1324,10 @@ false.</p>
 
 <p>This is an alias of <span class='object_link'><a href="#easter-class_method" title="Computus.easter (method)">easter</a></span>, but a default value of <tt>is_julian</tt> is
 true.</p>
+
+<p>When <tt>is_julian</tt> is true, returns Time object with year, month and
+day as Julian calendar. But Time object has Gregorian date, so Time#to_i
+and Time#wday return incorrect values.</p>
 
 
   </div>
@@ -1407,15 +1419,15 @@ true.</p>
       <pre class="lines">
 
 
-49
-50
-51
-52
-53
-54</pre>
+59
+60
+61
+62
+63
+64</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File 'lib/computus.rb', line 49</span>
+      <pre class="code"><span class="info file"># File 'lib/computus.rb', line 59</span>
 
 <span class='kw'>def</span> <span class='kw'>self</span><span class='period'>.</span><span class='id identifier rubyid_pascha'>pascha</span><span class='lparen'>(</span><span class='id identifier rubyid_year'>year</span><span class='comma'>,</span> <span class='id identifier rubyid_is_julian'>is_julian</span> <span class='op'>=</span> <span class='kw'>true</span><span class='rparen'>)</span>
 	<span class='id identifier rubyid_raise'>raise</span> <span class='const'>TypeError</span> <span class='kw'>unless</span> <span class='id identifier rubyid_year'>year</span><span class='period'>.</span><span class='id identifier rubyid_kind_of?'>kind_of?</span><span class='lparen'>(</span><span class='const'>Integer</span><span class='rparen'>)</span>
@@ -1518,21 +1530,21 @@ true.</p>
       <pre class="lines">
 
 
-192
-193
-194
-195
-196
-197
-198
-199
-200
-201
-202
-203</pre>
+206
+207
+208
+209
+210
+211
+212
+213
+214
+215
+216
+217</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File 'lib/computus.rb', line 192</span>
+      <pre class="code"><span class="info file"># File 'lib/computus.rb', line 206</span>
 
 <span class='kw'>def</span> <span class='kw'>self</span><span class='period'>.</span><span class='id identifier rubyid_wday0300'>wday0300</span><span class='lparen'>(</span><span class='id identifier rubyid_year'>year</span><span class='comma'>,</span> <span class='id identifier rubyid_is_julian'>is_julian</span> <span class='op'>=</span> <span class='kw'>false</span><span class='rparen'>)</span>
 	<span class='id identifier rubyid_raise'>raise</span> <span class='const'>TypeError</span> <span class='kw'>unless</span> <span class='id identifier rubyid_year'>year</span><span class='period'>.</span><span class='id identifier rubyid_kind_of?'>kind_of?</span><span class='lparen'>(</span><span class='const'>Integer</span><span class='rparen'>)</span>
@@ -1556,7 +1568,7 @@ true.</p>
 </div>
 
     <div id="footer">
-  Generated on Wed Feb 13 22:24:27 2013 by
+  Generated on Thu Feb 14 14:53:13 2013 by
   <a href="http://yardoc.org" title="Yay! A Ruby Documentation Tool" target="_parent">yard</a>
   0.8.3 (ruby-1.9.3).
 </div>

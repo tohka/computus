@@ -9,6 +9,11 @@ module Computus
 	# This is an alias of {.pascha}, but a default value of
 	# +is_julian+ is false.
 	#
+	# When +is_julian+ is true, returns Time object with year,
+	# month and day as Julian calendar. But Time object has
+	# Gregorian date, so Time#to_i and Time#wday return
+	# incorrect values.
+	#
 	# @example
 	#   # the Easter of 2013
 	#   Computus::easter(2013)
@@ -32,6 +37,11 @@ module Computus
 	#
 	# This is an alias of {.easter}, but a default value of
 	# +is_julian+ is true.
+	#
+	# When +is_julian+ is true, returns Time object with year,
+	# month and day as Julian calendar. But Time object has
+	# Gregorian date, so Time#to_i and Time#wday return
+	# incorrect values.
 	#
 	# @example
 	#   # the Pascha of 2013 (Julian calendar)
@@ -78,6 +88,10 @@ module Computus
 	end
 
 	# Meeus algorithm for calculating the date of the Julian Easter(Pascha).
+	#
+	# Returns Time object with year, month and day as Julian calendar.
+	# But Time object has Gregorian date, so Time#to_i and Time#wday
+	# return incorrect values.
 	#
 	# @param [Integer] year
 	# @return [Time] date of Pascha

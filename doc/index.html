@@ -61,13 +61,46 @@
 
     <iframe id="search_frame"></iframe>
 
-    <div id="content"><div id='filecontents'><h1>computus</h1>
+    <div id="content"><div id='filecontents'><h1>comptus</h1>
 
-<p>a library for calculating the date of the Easter</p>
+<h2>Description</h2>
+
+<p>A library for calculating the date of the Easter.</p>
+
+<h2>Dependencies</h2>
+
+<p>Ruby 1.8 or later</p>
+
+<h2>License</h2>
+
+<p>MIT License (see ./LICENSE)</p>
+
+<h2>Example</h2>
+
+<pre class="code ruby"><code><span class='id identifier rubyid_require'>require</span> <span class='tstring'><span class='tstring_beg'>'</span><span class='tstring_content'>computus</span><span class='tstring_end'>'</span></span>
+
+<span class='comment'># the Easter of 2013
+</span><span class='const'>Computus</span><span class='op'>::</span><span class='id identifier rubyid_easter'>easter</span><span class='lparen'>(</span><span class='int'>2013</span><span class='rparen'>)</span>
+<span class='comment'>#=&gt; 2013-03-31 12:00:00 UTC
+</span>
+<span class='comment'># the Pascha of 2013 (Julian calendar)
+</span><span class='const'>Computus</span><span class='op'>::</span><span class='id identifier rubyid_pascha'>pascha</span><span class='lparen'>(</span><span class='int'>2013</span><span class='rparen'>)</span>
+<span class='comment'>#=&gt; 2013-04-22 12:00:00 UTC
+</span>
+<span class='comment'># the Pascha of 2013 (Gregorian calendar)
+</span><span class='const'>Computus</span><span class='op'>::</span><span class='id identifier rubyid_pascha'>pascha</span><span class='lparen'>(</span><span class='int'>2013</span><span class='rparen'>)</span> <span class='op'>+</span> <span class='const'>Computus</span><span class='op'>::</span><span class='id identifier rubyid_gj_diff'>gj_diff</span><span class='lparen'>(</span><span class='int'>2013</span><span class='rparen'>)</span> <span class='op'>*</span> <span class='int'>86400</span>
+<span class='comment'>#=&gt; 2013-05-05 12:00:00 UTC
+</span></code></pre>
+
+<h2>Documentation</h2>
+
+<ul>
+<li>  see ./doc/index.html</li>
+</ul>
 </div></div>
 
     <div id="footer">
-  Generated on Wed Feb 13 22:24:26 2013 by
+  Generated on Thu Feb 14 14:53:12 2013 by
   <a href="http://yardoc.org" title="Yay! A Ruby Documentation Tool" target="_parent">yard</a>
   0.8.3 (ruby-1.9.3).
 </div>
